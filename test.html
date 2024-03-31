@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('./bg.jpg');
+            background-size: cover;
+            padding: 40px;
+        }
+        canvas { background-color: #A1C398; display: block; margin: 0 auto; }
+
+        .btn {
+            background-color: #C6EBC5;
+            font-size: 30px;
+            font-weight: bold;
+            height: 50px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #A1C398;
+            padding: 30px;
+            flex-direction: column;
+            padding-left: 50px;
+            padding-right: 50px;
+            min-width: 350px;
+            border-radius: 10px;
+        }
+
+        .subTitle{
+            font-size: 20px;
+            color: red;
+            font-weight: 600;
+        }
+
+        #divGame {
+            display: none;
+        }
+
+        .cardPoints {
+            background-color: #C6EBC5;
+            padding: 20px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        .pDentes{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #pointsDentes {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divGame">
+        <div class="cardPoints">
+            <img src="./comDente.jpg" style="width: 80px; border-radius: 50%;" />
+            <p class="pDentes">Dentes: <span id="nDentes">0</span></p>
+            <div id="pointsDentes"></div>
+        </div>
+        <div style="flex-grow: 1">
+            <canvas id="gameCanvas" style="border-radius: 10px;" width="700" height="600"></canvas>
+        </div>
+    </div>
+    <script src="testgame.js"></script>
+
+    <div class="card" id="divStart">
+        <p class="title">Rosaura Adventure</p>
+        <img src="./image-1.png" style="width: 150px; margin: 10px; margin-bottom:20px;" />
+        <p class="subTitle">Ajude a rosaura colocar os dentes</p>
+        <button class="btn" onClick="start()" style="width: 100%;">Start</button>
+    </div>
+
+    <div class="card" id="divSuccess" style="display: none;">
+        <p class="title">Parabens</p>
+        <p class="title">Rosaura Adventure</p>
+        <img src="./comDente.jpg" style="width: 150px; margin: 10px; margin-bottom:20px;" />
+        <p class="subTitle">Voce ajudou rosaura colocar os dentes</p>
+        <button class="btn" onClick="start()" style="width: 100%;">Re-Start</button>
+    </div>
+</body>
+</html>
